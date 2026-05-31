@@ -24,7 +24,7 @@
 
 ```bash
 mkdir -p "${CODEX_HOME:-$HOME/.codex}/skills"
-git clone https://github.com/<your-name>/zelda-style-image-prompt.git \
+git clone https://github.com/xiaoTN/zelda-style-image-prompt.git \
   "${CODEX_HOME:-$HOME/.codex}/skills/zelda-style-image-prompt"
 ```
 
@@ -36,7 +36,7 @@ git clone https://github.com/<your-name>/zelda-style-image-prompt.git \
 
 ```bash
 mkdir -p .codex/skills
-git clone https://github.com/<your-name>/zelda-style-image-prompt.git \
+git clone https://github.com/xiaoTN/zelda-style-image-prompt.git \
   .codex/skills/zelda-style-image-prompt
 ```
 
