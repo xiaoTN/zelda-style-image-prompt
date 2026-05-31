@@ -1,0 +1,93 @@
+# zelda-style-image-prompt
+
+一个用于生成「塞尔达传说：旷野之息 / 王国之泪」原版游戏实况截图风格图片提示词的 Codex Skill。
+
+它只负责写提示词，不包含任何游戏素材、图片、模型、字体、音频或任天堂资源。
+
+## 适用场景
+
+- 把真实地点转成塞尔达风格游戏截图提示词
+- 写林克、塞尔达、海拉鲁探索、神庙、驿站、HUD 等场景提示词
+- 把产品、物体或概念包装成 BOTW / TOTK 风格的游戏实况截图提示词
+- 统一控制中文 UI、区域发现地名 UI、HUD、耐力轮和原版游戏元素
+
+## 不适用场景
+
+- 直接生成图片或视频
+- 提供任天堂官方素材
+- 复刻、提取或分发游戏资产
+- 规避任何平台、模型或版权方的使用限制
+
+## 安装
+
+### 安装到全局 Codex skills
+
+```bash
+mkdir -p "${CODEX_HOME:-$HOME/.codex}/skills"
+git clone https://github.com/<your-name>/zelda-style-image-prompt.git \
+  "${CODEX_HOME:-$HOME/.codex}/skills/zelda-style-image-prompt"
+```
+
+安装后重启 Codex，让新 skill 被重新扫描。
+
+### 安装到某个项目
+
+也可以把仓库复制到项目级 skills 目录：
+
+```bash
+mkdir -p .codex/skills
+git clone https://github.com/<your-name>/zelda-style-image-prompt.git \
+  .codex/skills/zelda-style-image-prompt
+```
+
+## 使用方式
+
+在 Codex 里直接提出类似需求：
+
+```text
+使用 zelda-style-image-prompt，帮我写一个北京故宫的塞尔达风格图片提示词，不用出图。
+```
+
+或：
+
+```text
+做一张只有塞尔达、没有林克的海边驿站风格图片提示词。
+```
+
+skill 会输出可直接交给图片生成模型的最终提示词代码块。
+
+## 文件结构
+
+```text
+.
+├── SKILL.md
+├── references/
+│   └── zelda-visual-style.md
+├── agents/
+│   └── openai.yaml
+└── evals/
+    └── evals.json
+```
+
+- `SKILL.md`：Codex Skill 入口，包含触发描述、提示词模板和输出规则
+- `references/zelda-visual-style.md`：内置视觉规范，包括 HUD、中文 UI、区域发现地名 UI 和元素池
+- `agents/openai.yaml`：面向 OpenAI/Codex 的展示元数据
+- `evals/evals.json`：基础评测用例
+
+## 设计原则
+
+- 只写稳定、简洁、可执行的提示词
+- 默认靠近 BOTW / TOTK 原版游戏实况截图，而不是电影 CG、写实摄影或普通奇幻插画
+- 所有可读 UI 默认中文化
+- 真实地点的 UI 地名使用真实中文地名，不把游戏内地名硬塞进现实地点
+- 尊重用户的角色边界，例如「不要林克」时改为塞尔达单主角
+
+## 免责声明
+
+本项目是非官方提示词写作工具，与 Nintendo、The Legend of Zelda、Breath of the Wild、Tears of the Kingdom 或其权利方没有关联、授权、赞助或背书关系。
+
+项目中出现的游戏名称、角色名称和商标仅用于描述提示词风格与兼容场景。使用本 skill 生成、发布或商用任何内容时，请自行确认是否符合相关平台规则、模型服务条款和知识产权要求。
+
+## License
+
+MIT

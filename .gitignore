@@ -1,0 +1,5 @@
+.DS_Store
+.codex/
+image-output/
+video-output/
+*-workspace/

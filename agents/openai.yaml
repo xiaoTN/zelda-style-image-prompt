@@ -1,0 +1,4 @@
+interface:
+  display_name: "塞尔达风格图片提示词"
+  short_description: "生成稳定的塞尔达原版游戏实况截图风格图片提示词模板"
+  default_prompt: "使用 $zelda-style-image-prompt 为这个场景写一份塞尔达风格图片提示词。"
